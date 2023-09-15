@@ -1,7 +1,5 @@
 import { Client } from 'pg';
 import * as yup from 'yup';
-import pgClient from '../config/db';
-import redisClient from '../config/redis';
 
 /**
  * Checks if a phone number is available for a specific user account.
@@ -29,15 +27,7 @@ export async function isPhoneNumberAvaliable(username: string, to: string, pgCli
  * @param {any} req - The Express request object.
  * @returns {Promise<void>} - A promise that resolves when validation is complete.
  */
-export const validateRequest = async (req: any) => {
-  const schema = yup.object().shape({
-    from: yup.string().min(6).max(16).required(),
-    to: yup.string().min(6).max(16).required(),
-    text: yup.string().min(1).max(120).required(),
-  });
 
-  await schema.validate(req.body);
-};
 
 /**
  * Checks if the 'from' parameter exists in the database.

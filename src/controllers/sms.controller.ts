@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 import pgClient from '../config/db';
 import redisClient from '../config/redis';
-import { validateRequest, checkFromParameter, checkStopRequest, checkRequestLimit } from '../utils/sms';
+import { checkFromParameter, checkStopRequest, checkRequestLimit } from '../utils/sms';
+import { validateRequest } from '../validation/sms';
 
 interface InboundRequest extends Request {
   username: string;
