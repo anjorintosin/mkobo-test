@@ -60,6 +60,7 @@ To run the SMS Gateway project, follow these steps:
    npm install        # Install project dependencies
    npm run build      # Build the TypeScript code
    npm run start      # Start the Express server
+   npm run test       # To run the test
    ```
 
 5. The server should now be running on the specified port (default: 3000). You can make requests to the API endpoints for processing SMS messages.
@@ -72,5 +73,3 @@ To run the SMS Gateway project, follow these steps:
 ## API Documentation
 
 For detailed information on the API endpoints, request parameters, and expected behavior, refer to the inline comments in the `sms.controller.ts` file. Each function is documented to explain its purpose and usage.
-
-**Note:** Make sure to replace placeholders like `your_username`, `your_password`, and `your_database_name` in the environment variables with your actual database credentials.
