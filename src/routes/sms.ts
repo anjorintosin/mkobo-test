@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const express = require('express')
 const router = express.Router()
 
 const {
   processInbound,
-  processOutbound,
+  processOutbound
 } = require('../controllers/sms.controller')
 
 router.route('/inbound/sms').post(processInbound)
