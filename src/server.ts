@@ -1,6 +1,12 @@
+/**
+ * Sets up an Express server with middleware and routes for handling SMS-related requests.
+ * @module Server
+ */
+
 import express, { Request, Response, NextFunction } from 'express';
 import bodyParser from 'body-parser';
 import pgClient from './config/db';
+import * as dotenv from 'dotenv';
 import { smsRouter } from './routes'; // Import your SMS router here
 
 interface CustomRequest extends Request {
@@ -8,8 +14,10 @@ interface CustomRequest extends Request {
     authId?: string;
 }
 
+dotenv.config();
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000
+console.log()
 
 pgClient.connect();
 
@@ -21,7 +29,6 @@ app.use(async (req: CustomRequest, res: Response, next: NextFunction) => {
     if (!auth) {
         res.status(403).json({ message: '', error: 'Basic Authentication required' });
     } else {
-        console.log(auth)
         const [username, authId] = Buffer.from(auth.split(' ')[1], 'base64').toString().split(':');
 
         const result = await pgClient.query('SELECT id FROM account WHERE username = $1 AND auth_id = $2', [username, authId]);
