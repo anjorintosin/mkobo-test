@@ -7,7 +7,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import bodyParser from 'body-parser';
 import pgClient from './config/db';
 import * as dotenv from 'dotenv';
-import { smsRouter } from './routes'; // Import your SMS router here
+import { smsRouter } from './routes';
 
 interface CustomRequest extends Request {
     username?: string;
