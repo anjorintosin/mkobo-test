@@ -26,11 +26,11 @@ The project is organized into several main components:
 The project uses the `dotenv` library to load environment variables. Create a `.env` file in the project root directory with the following variables:
 
 ```
-POSTGRES_USERNAME=your_username
-POSTGRES_PASSWORD=your_password
+POSTGRES_USERNAME=postgres
+POSTGRES_PASSWORD=test
 POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
-POSTGRES_DB_NAME=your_database_name
+POSTGRES_PORT=5433
+POSTGRES_DB_NAME=Database
 PORT=3000
 ```
 
@@ -64,5 +64,3 @@ To run the SMS Gateway project, follow these steps:
 For detailed information on the API endpoints, request parameters, and expected behavior, refer to the inline comments in the `sms.controller.ts` file. Each function is documented to explain its purpose and usage.
 
 **Note:** Make sure to replace placeholders like `your_username`, `your_password`, and `your_database_name` in the environment variables with your actual database credentials.
-
-Feel free to explore and modify the project to meet your specific SMS gateway requirements.
