@@ -1,5 +1,10 @@
 import * as yup from 'yup';
 
+/**
+ * Validates the request body against a schema.
+ * @param {any} req - The Express request object.
+ * @returns {Promise<void>} - A promise that resolves when validation is complete.
+ */
 export const validateRequest = async (req: any) => {
     const schema = yup.object().shape({
       from: yup.string().min(6).max(16).required(),

@@ -1,5 +1,4 @@
 import { Client } from 'pg';
-import * as yup from 'yup';
 
 /**
  * Checks if a phone number is available for a specific user account.
@@ -21,12 +20,6 @@ export async function isPhoneNumberAvaliable(username: string, to: string, pgCli
     throw error;
   }
 }
-
-/**
- * Validates the request body against a schema.
- * @param {any} req - The Express request object.
- * @returns {Promise<void>} - A promise that resolves when validation is complete.
- */
 
 
 /**
