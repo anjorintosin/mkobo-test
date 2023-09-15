@@ -1,4 +1,5 @@
-# MKOBO-TEST
+# MKOBO-TEST SMS Gateway
+
 This SMS Gateway project provides a simple API for handling inbound and outbound SMS requests. It includes a server, controllers, database configuration, and routes for processing SMS messages. Below is an overview of the project components and setup instructions.
 
 ## Project Structure
@@ -26,13 +27,22 @@ The project is organized into several main components:
 The project uses the `dotenv` library to load environment variables. Create a `.env` file in the project root directory with the following variables:
 
 ```
-POSTGRES_USERNAME=postgres
-POSTGRES_PASSWORD=test
+POSTGRES_USERNAME=your_username
+POSTGRES_PASSWORD=your_password
 POSTGRES_HOST=localhost
-POSTGRES_PORT=5433
-POSTGRES_DB_NAME=Database
+POSTGRES_PORT=5432
+POSTGRES_DB_NAME=your_database_name
 PORT=3000
 ```
+
+## Authentication
+
+To test the API using Postman, use Basic Authentication. Provide the following credentials:
+
+- **Username**: Use an account's username from the database.
+- **Password**: Use the corresponding `auth_id` from the same account row as the password.
+
+This authentication is required to have permission to run API requests.
 
 ## Setup Instructions
 
